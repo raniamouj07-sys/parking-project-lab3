@@ -8,7 +8,8 @@ public class ParkingGarage {
     private final List<String> receipts = new ArrayList<>();
     private final FileLogger logger = new FileLogger("parking.log");
     private double total;
-
+//finance : Responsible for changing pricing rules and fee calculations (fee()).
+//operations / Desk Manager and IT who are responsible for payment/refund workflows (checkout(), cancel()) and logging mechanisms (FileLogger).
     public double fee(Vehicle vehicle, int hours) {
         return switch (vehicle.getType()) {
             case "CAR" -> hours * 5.0;
